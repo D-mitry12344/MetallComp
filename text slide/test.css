@@ -1,0 +1,12 @@
+
+.block{
+	height:700px;
+	
+	background: red;
+}
+
+.block-active{
+	height:600px;
+	display: block;
+	background: green;
+}
