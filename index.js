@@ -1,3 +1,5 @@
+let Block = document.querySelector('html');
+
 let headerAll = document.querySelector('.Head');
 let menuCatalog = document.querySelectorAll("#menu_catalog");
 let menuCatalogItems = document.querySelectorAll("#menu_catalog_items");
@@ -45,16 +47,16 @@ regionMenu.addEventListener("click", function(){
 	if(regions.style.display === ''){
 		regions.style.display = 'block';
 	}else{
-		
 		regions.style.display = '';
 	}
-
 })
+
+
 let regionsMyself = document.querySelectorAll("#region_myself");
 regionsMyself.forEach(function(item){
 	item.addEventListener("click", function(){
-		
 		regionMenu.textContent =item.textContent ;	
+		regions.style.display = '';
 	})
 })
 
@@ -71,9 +73,17 @@ language.addEventListener("click",function(){
 })
 
 
-let bannerHead = document.querySelector(".Head__banner_head");
-let sliderItem = document.querySelectorAll(".Head__slider_item_head");
-let catalog = document.querySelector('.popularBlock')
+const bannerHead = document.querySelector(".Head__banner_head");
+const sliderItem = document.querySelectorAll(".Head__slider_item_head");
+const catalog = document.querySelector('.popularBlock');
+const services = document.querySelector('.services');
+const stocks = document.querySelector('.stocks');
+const news = document.querySelector('.news');
+const useful = document.querySelector('.useful');
+const parthers = document.querySelector('.parthers');
+const menuFooter = document.querySelector('.menu-footer');
+
+const masBlocks = [catalog, bannerHead , services, stocks, news, useful, parthers, menuFooter]
 /*
 sliderItem[1].addEventListener('click',function() {
 	catalog.classList.add('Head__active_banner');
@@ -97,7 +107,7 @@ sliderItem[0].addEventListener('click',function() {
 	})
 })
 */
-let Block = document.querySelector('html');
+
 
 
 if (Block.addEventListener) {
@@ -109,40 +119,235 @@ if (Block.addEventListener) {
 let number=0;
 function onWheel(e) {
     var delta = e.deltaY;
-    number = number + delta 
-    if(number > 500){
-	    catalog.classList.add('Head__active_banner');
-	    bannerHead.style.animation="0.3s move_banner_dis forwards"
-	    //setTimeout(()=>{
-			bannerHead.classList.remove('Head__active_banner');
-	    //}, 500)
-		sliderItem[1].classList.add("Head__active_slider_item");
-		sliderItem[0].classList.remove("Head__active_slider_item");
+    number = number + delta;
+    
+    
+
+//FIRST BANNER DEFAULT
+	if(/*number <= 500 || number <= 0*/ 
+    	delta!==100 && sliderItem[1].classList[2] === "Head__active_slider_item"
+    	//||  delta == 100 && sliderItem[0].classList[2] === "Head__active_slider_item"
+    ){
+	    masBlocks.forEach(function(item){
+     			 item.style.animation="0.3s move_banner_dis forwards"
+     	})
+		//setTimeout(()=>{
+			masBlocks.forEach(function(item){
+				item.classList.remove('Head__active_banner');
+			})
+			bannerHead.classList.add('Head__active_banner');
+		//}, 500)
 		sliderItem.forEach(function(item){
-			item.style.borderBottom="2px solid black";
-			item.style.color="black";
-		})
-		catalog.style.animation="1s move_banner_act forwards"
-    }
-    if(number <= 500 || number <= 0){
-	    bannerHead.classList.add('Head__active_banner');
-	    catalog.style.animation="0.3s move_banner_dis forwards";
-	    //setTimeout(()=>{
-			catalog.classList.remove('Head__active_banner');
-	    //}, 500)
-		sliderItem[0].classList.add("Head__active_slider_item");
-		sliderItem[1].classList.remove("Head__active_slider_item");
-		sliderItem.forEach(function(item){
+			item.classList.remove("Head__active_slider_item");
 			item.style.borderBottom="";
 			item.style.color="";
 		})
+		sliderItem[0].classList.add("Head__active_slider_item");
 		bannerHead.style.animation="1s move_banner_act forwards";
     }
-    
+
+//CATALOG
+    if(/*number > 30 // delta==100*/  
+    	delta !== 100 && sliderItem[3].classList[2] === "Head__active_slider_item" 
+    	||  delta == 100 && sliderItem[1].classList[2] === "Head__active_slider_item" 
+    ){
+	    masBlocks.forEach(function(item){
+     		item.style.animation="0.3s move_banner_dis forwards"
+     	})
+		//setTimeout(()=>{
+					masBlocks.forEach(function(item){
+						item.classList.remove('Head__active_banner');
+					})
+			catalog.classList.add('Head__active_banner');
+		//}, 500)
+		sliderItem.forEach(function(item){
+				item.classList.remove("Head__active_slider_item");
+				item.style.borderBottom="2px solid black";
+				item.style.color="black";
+		});
+		sliderItem[2].classList.add("Head__active_slider_item");
+		catalog.style.animation="1s move_banner_act forwards"
+    }else{
+//STOCKS
+	    if(/*number <= 500 || number <= 0*/ 
+	     	delta == 100 && sliderItem[0].classList[2] === "Head__active_slider_item"
+	     	||  delta !== 100 && sliderItem[2].classList[2] === "Head__active_slider_item"
+	    ){		
+	     		masBlocks.forEach(function(item){
+	     			 item.style.animation="0.3s move_banner_dis forwards"
+	     		})
+			    //setTimeout(()=>{
+					masBlocks.forEach(function(item){
+						item.classList.remove('Head__active_banner');
+					})
+					stocks.classList.add('Head__active_banner');
+			    //}, 500)
+				sliderItem.forEach(function(item){
+					item.classList.remove("Head__active_slider_item");
+					item.style.borderBottom="2px solid black";
+					item.style.color="black";
+				});
+				sliderItem[1].classList.add("Head__active_slider_item");
+				stocks.style.animation="1s move_banner_act forwards"
+		}else{
+
+	
+//SERVICES		
+	if(/*number <= 500 || number <= 0*/ 
+     	delta == 100 && sliderItem[2].classList[2] === "Head__active_slider_item"
+     	||  delta !== 100 && sliderItem[4].classList[2] === "Head__active_slider_item"
+    ){		
+     		masBlocks.forEach(function(item){
+     			 item.style.animation="0.3s move_banner_dis forwards";
+
+     		})
+		  //setTimeout(()=>{
+					masBlocks.forEach(function(item){
+						item.classList.remove('Head__active_banner');
+					})
+				services.classList.add('Head__active_banner');
+		   // }, 500)
+			sliderItem.forEach(function(item){
+				item.classList.remove("Head__active_slider_item");
+				item.style.borderBottom="2px solid black";
+				item.style.color="black";
+			});
+			sliderItem[3].classList.add("Head__active_slider_item");
+			services.style.animation="1s move_banner_act forwards"
+	
+	}else{
+
+//USEFUL
+	
+	
+		if(/*number <= 500 || number <= 0*/ 
+     	delta == 100 && sliderItem[4].classList[2] === "Head__active_slider_item"
+     	||  delta !== 100 && sliderItem[6].classList[2] === "Head__active_slider_item"
+		    ){		
+		     		masBlocks.forEach(function(item){
+		     			 item.style.animation="0.3s move_banner_dis forwards";
+
+		     		})
+				  //setTimeout(()=>{
+							masBlocks.forEach(function(item){
+								item.classList.remove('Head__active_banner');
+							})
+						useful.classList.add('Head__active_banner');
+				   // }, 500)
+					sliderItem.forEach(function(item){
+						item.classList.remove("Head__active_slider_item");
+						item.style.borderBottom="2px solid black";
+						item.style.color="black";
+					});
+					sliderItem[5].classList.add("Head__active_slider_item");
+					useful.style.animation="1s move_banner_act forwards"
+			
+
+		}else{
+	
+
+
+
+//NEWS
+		 if(/*number <= 500 || number <= 0*/ 
+     	delta == 100 && sliderItem[3].classList[2] === "Head__active_slider_item"
+     	||  delta !== 100 && sliderItem[5].classList[2] === "Head__active_slider_item"
+		    ){		
+		     		masBlocks.forEach(function(item){
+		     			 item.style.animation="0.3s move_banner_dis forwards";
+
+		     		})
+				  //setTimeout(()=>{
+							masBlocks.forEach(function(item){
+								item.classList.remove('Head__active_banner');
+							})
+						news.classList.add('Head__active_banner');
+				   // }, 500)
+					sliderItem.forEach(function(item){
+						item.classList.remove("Head__active_slider_item");
+						item.style.borderBottom="";
+						item.style.color="";
+					});
+					sliderItem[4].classList.add("Head__active_slider_item");
+					news.style.animation="1s move_banner_act forwards"
+			
+
+					}
+					//FOOTER
+
+						if(/*number <= 500 || number <= 0*/ 
+				     	delta == 100 && sliderItem[6].classList[2] === "Head__active_slider_item"
+				     	//||  delta !== 100 && sliderItem[5].classList[2] === "Head__active_slider_item"
+						    ){		
+						     		masBlocks.forEach(function(item){
+						     			 item.style.animation="0.3s move_banner_dis forwards";
+
+						     		})
+								  //setTimeout(()=>{
+											masBlocks.forEach(function(item){
+												item.classList.remove('Head__active_banner');
+											})
+										menuFooter.classList.add('Head__active_banner');
+								   // }, 500)
+									sliderItem.forEach(function(item){
+										item.classList.remove("Head__active_slider_item");
+										item.style.borderBottom="";
+										item.style.color="";
+									});
+									sliderItem[7].classList.add("Head__active_slider_item");
+									menuFooter.style.animation="1s move_banner_act forwards"
+							
+
+						
+								
+						}
+					//PARTHERS
+
+						if(/*number <= 500 || number <= 0*/ 
+				     	delta == 100 && sliderItem[5].classList[2] === "Head__active_slider_item"
+				     	||  delta !== 100 && sliderItem[7].classList[2] === "Head__active_slider_item"
+						    ){		
+						     		masBlocks.forEach(function(item){
+						     			 item.style.animation="0.3s move_banner_dis forwards";
+
+						     		})
+								  //setTimeout(()=>{
+											masBlocks.forEach(function(item){
+												item.classList.remove('Head__active_banner');
+											})
+										parthers.classList.add('Head__active_banner');
+								   // }, 500)
+									sliderItem.forEach(function(item){
+										item.classList.remove("Head__active_slider_item");
+										item.style.borderBottom="2px solid black";
+										item.style.color="black";
+									});
+									sliderItem[6].classList.add("Head__active_slider_item");
+									parthers.style.animation="1s move_banner_act forwards"
+							
+
+						
+								
+						}	
+					
+				}
+
+			}
+
+			}
+		}
+	
+
+	
+
     return number;		
 }
 
+
+
 /*
+menuFooter
+
 
 let sliderItem = document.querySelectorAll(".Head__slider_item_head");
 const massivItem= [0,1,2,3,4]

@@ -8,6 +8,13 @@
 	src: url(fonts/Montserrat.ttf);
 }
 
+html{
+	background: url("img/news/wapper.png") center no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	box-shadow: inset 0px 200px 80px 50px rgb(0,0,0);
+}
 
 body{
 	font-family: "Lato";
@@ -313,14 +320,16 @@ header a{
 	width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: -800px;
 }
 
 .popularBlock{
 	width: 1440px;
 	display: none;
+	height: 510px;
+	background: #e4e4e4;
+	padding-top: 200px;
 	padding-bottom: 92px;
-	background: white;
-	margin-top: -600px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -383,6 +392,7 @@ header a{
 }
 
 .popularBlock__catalog{
+	cursor: pointer;
 	margin-left: 10px;
 	width: 202px;
 	height: 330px;
@@ -459,6 +469,576 @@ header a{
 	margin-top: 12px;
 }
 
+.popularBlock__bottom-line{
+	margin-top: 30px;
+	margin-left: 140px; 
+	width: 1290px;
+	height: 0px;
+	padding: 0; 
+	border: 2px solid rgb(0, 0, 0, 0.3);
+	border-radius: 20px;
+}
+
+.popularBlock__bottom-line-active{
+	width: 200px;
+	border-radius: 10px;
+	position: absolute;
+	margin-top: -2px;
+	margin-left: -2px;
+	border-bottom: 4px solid black;
+}
+
+#services{
+	position: absolute;
+	width: 1440px;
+	margin-top: -800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.services{
+	width: 1440px;
+	padding-top: 100px;
+	height: 700px;
+	background: #e4e4e4;
+	display: none;
+	background: linear-gradient(256.7deg, #ECECE9 0%, #F6F6F6 100%);
+}
+
+.services__header{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	padding-top: 174px;
+	margin-left: 150px;
+}
+
+.services__items{
+	display: flex;
+	margin-top: 150px;
+	margin-left: 145px;
+}
+
+.services__items__self{
+	width: 401px;
+	cursor: pointer;
+	height: 100px;
+	display: flex;
+	margin-left: 31.5px;	
+	background: white;
+	box-shadow: 0px 0px 2px 2px #e4e4e4;
+	transition-duration: 0.3s
+}
+
+.services__items__self-first{
+	margin-left: 0px;
+}
+
+.services__items__self-thrid{
+	/*margin-left: 30px;*/
+}
+
+.services__items__self:hover{
+	background: #C0511F;
+	color: white;
+}
+
+.services__items__self-left-block{
+	height: 100px;
+	width: 30px;
+	background: #C0511F;
+}
+
+.services__items__self-block{
+	height: 75px;
+	width: 371px;
+	padding-top: 25px;
+}
+
+.services__items__self-block_text{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+}
+
+/*STOCKS*/
+
+#stocks{
+	position: absolute;
+	z-index: 1;
+	width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -800px;
+}
+
+.stocks{
+	width: 1440px;
+	height: 700px;
+	padding-top: 100px;
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	background: #e4e4e4;
+}
+
+.stocks__header{
+	display: flex;
+	margin-top: 87px;
+	margin-left: 150px;
+}
+
+.stocks__header_head-text{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.stocks__header_href{
+	margin-top: 27px;
+}
+
+.stocks__header_href:hover , .stocks__all-products__item-href:hover{
+	opacity: 0.7;
+}
+
+.stocks__header_href-text{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	text-decoration: none;
+	color: #C0511F;
+	margin-left: 1053px;
+}
+
+.stocks__header_href-img{
+	margin-left: 14px;
+}
+
+.stocks__all-products{
+	margin-left: 120px;
+	margin-top: 23px;
+	display: flex;
+}
+
+.stocks__all-products__item{
+	width:401px;
+	height:400px;
+	background: white;
+	margin-left: 30px;
+}
+
+.stocks__all-products__item-info{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	padding-top: 17px;
+	margin-left: 27px;
+}
+
+.stocks__all-products__item-href{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: #C0511F;
+	margin-top: 0px;
+	margin-left: -375px;
+	text-decoration-line: underline;
+}
+
+.stocks__all-products__item-img{
+	margin-left: 93px;
+	margin-top: 35px;
+	margin-bottom: 15px;
+}
+
+/*NEWS*/
+
+
+#news{
+	position: absolute;
+	z-index: 1;
+	width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+	background: url("img/news/wapper.png");
+	margin-top: -700px;
+}
+
+.news{
+	width: 1440px;
+	height: 670px;
+	display: none;
+	padding-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	background: rgb(0,0,0, 0.5);
+}
+
+.news__header{
+	display: flex;
+	margin-left: 150px;
+	margin-top: 63px;
+}
+
+.news__header-name{
+	font-family: Montserrat;
+	font-style: Medium;
+	font-size: 24px;
+	line-height: 29px;
+	line-height: 100%;
+	color: white;
+}
+
+.news__header-href{
+	margin-left: 1007px;
+	margin-top: 25px;
+}
+
+.news__header-href:hover{
+	opacity: 0.7;
+}
+
+.news__header-href-img{
+	margin-left: 13px;
+}
+
+.news__header-href-text{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #C0511F;
+	text-decoration: none
+}
+
+.news__items{
+	display: flex;
+	margin-left: 150px;
+	margin-top: 50px;
+}
+
+.news__items__big-news_href{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: #C0511F;
+}
+
+.news__items__big-news_href:hover{
+	opacity: 0.7;
+}
+
+.news__items__big-news_text{
+	color: white;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 48px;
+	margin-top: -8px;
+	width: 501px;
+}
+
+.news__items__big-news_date{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 48px;
+	padding-top: 0px;
+	color: white;
+}
+
+.news__items__small-news{
+	margin-left: 517px;
+	margin-top: 48px;
+}
+
+.news__items__small-news_item{
+	width: 220px;
+	margin-bottom: 33px;
+}
+
+.news__items__small-news_item-info{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: white;
+}
+
+.news__items__small-news_item-date{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 12px;
+	color: #F6F6F6;
+}
+
+/*USEFUL*/
+
+#useful{
+	width: 1440px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -700px;
+}
+
+.useful{
+	width: 1440px;
+	height: 650px;
+	display: none;
+	padding-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #f6f6f6;
+}
+
+.useful__header{
+	display: flex;
+	margin-left: 149px;
+	margin-top: 90px;
+}
+
+.useful__header_head-text{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.useful__header_href{
+	margin-top: 27px;
+	margin-left: 915px;
+}
+
+.useful__header_href:hover{
+	opacity: 0.7;
+}
+
+.useful__header_href-img{
+	margin-left: 13px;
+}
+
+.useful__header_href-text{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #C0511F;
+	text-decoration: none;
+}
+
+.useful__all-products{
+	display: flex;
+	margin-left: 115px;
+	margin-top: 24px;
+}
+
+.useful__all-products__item{
+	cursor: pointer;
+	width: 401px;
+	height: 370px;
+	margin-left: 28px;
+	border: 1px solid #e4e4e4;
+	transition-duration: 0.3s;
+}
+
+.useful__all-products__item:hover{
+	color: white;
+	background: #C0511F;
+}
+
+.useful__all-products__item-info{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	padding-left: 20px;
+	padding-top: 1px;
+}
+
+.useful__all-products__item-description{
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	padding-left: 20px;
+	padding-top: 5px;
+}
+
+/*PARTHERS*/
+#parthers{
+	width: 1440px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -700px;
+}
+
+.parthers{
+	width: 1440px;
+	height: 550px;
+	display: none;
+	padding-top: 50px;
+	padding-bottom: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #f6f6f6;
+}
+.parthers__header_head{
+	margin-top: 195px;
+	margin-left: 147px;
+}
+
+.parthers__header_head-text{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.parthers__all{
+	display: flex;
+	margin-left: 144px;
+	margin-top: 100px;
+}
+
+.parthers__all__item{
+	margin-left: 82px;
+}
+
+.parthers__all__ARCELOR{
+	margin-left: 0px;
+}
+
+.parthers__all__CMK{
+	padding-top: 23px;
+	margin-left: 79px;
+}
+
+.parthers__all__AMET, .parthers__all__MMK{
+	padding-top: 27px;
+}
+
+/*FOOTER*/
+
+#menu-footer{
+	width: 1440px;
+	position: absolute;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -701px;
+}
+
+.menu-footer{
+	width: 1440px;
+	height: 700px;
+	display: none;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.menu-footer__info{
+	display: flex;
+	padding-top: 123px;
+	margin-left: 144px;
+}
+
+
+.menu-footer__info__string{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 30px;
+	color: #C0511F;
+}
+
+.menu-footer__info__lists{
+	margin-top: -8px;
+	margin-left: -19px;
+	cursor: pointer;
+}
+
+.menu-footer__info__block-second{
+	margin-left: 100px;
+	line-height: 30px;
+}
+
+.menu-footer__info__lists-item{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 30px;
+	color: white;
+	cursor: pointer;
+}
+
+.menu-footer__footer{
+	border-top: 1px solid #818181;
+	display: flex;
+	width: 1270px;
+	margin-left: 145px;
+	margin-top: 73px;
+}
+
+.menu-footer__footer-social{
+	display: flex;
+	margin-top: 40px;
+	margin-left: -2px;
+}
+
+.menu-footer__footer-social_item{
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.menu-footer__footer-social_item:hover{
+	opacity: 0.7;
+}
+
+.menu-footer__footer-social_fb{
+	margin-left: 0;
+}
+
+.menu-footer__footer-rights{
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 15px;
+	color: white;
+	margin-left: 780px;
+	margin-top: 38px;
+}
+
 .Head__active_banner{
 	display: block;
 }
@@ -466,10 +1046,12 @@ header a{
 @keyframes move_banner_dis{
 	from{
 		opacity: 1;
+		display: block;
 
 	}
 	to{
 		opacity: 0;
+		display: none;
 	}
 }
 
@@ -481,5 +1063,6 @@ header a{
 	}
 	to{
 		opacity: 1;
+		display: block;
 	}
 }
