@@ -1,35 +1,40 @@
 @font-face{
 	font-family: "Lato";
-	src: url(fonts/Lato.ttf);
+	src: url('fonts/Lato.ttf');
 }
 
 @font-face{
 	font-family: "Montserrat";
-	src: url(fonts/Montserrat.ttf);
+	src: url('fonts/Montserrat.ttf');
 }
 
 html{
-	background: url("img/news/wapper.png") center no-repeat;
+	background: url("img/header/headWap.png") no-repeat;
 	background-size: cover;
 	height: 100%;
 	width: 100%;
-	box-shadow: inset 0px 200px 80px 50px rgb(0,0,0);
+	margin: 0px;
+	overflow-y: hidden;
+	/*filter: blur(10px);*/
+	/*box-shadow: inset 0px 200px 80px 50px rgb(0,0,0);*/
 }
 
 body{
 	font-family: "Lato";
-	width: 1440px;
-	margin-top: 0px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
+	margin: 0;
+	background-size: contain;
+	/*overflow-y: hidden;*/
 }
 
 header{
-	width: 1440px;
-	height: 700px;
-	background-size: cover;
-	background: url("img/header/headWap.png") center no-repeat;
-	background-size: cover;
+	
+	/*margin-top: 0px;
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background: linear-gradient(180deg, #0B0C0E 10.21%, rgba(11, 12, 14, 0.4));
+	/*background-size: cover;*/
 }
 
 header a{
@@ -39,9 +44,14 @@ header a{
 }
 
 .Head{
-	width: 1440px;
-	height: 700px;
-	background: linear-gradient(180deg, #0B0C0E 10.21%, rgba(11, 12, 14, 0.2) 100%);
+	position: absolute;
+	margin-top: 0px;
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background: linear-gradient(180deg, #0B0C0E 10.21%, rgba(11, 12, 14, 0.4));
+	
+	/*background-size: auto;*/
 }
 
 .Head__menuHead{
@@ -55,14 +65,19 @@ header a{
 
 .Head__menuHead__regionHead{
 	display: flex;
-	position: absolute;
+	width: 100px;
 	color: white;
 	margin-top: 12px;
 	font-size: 14px;
-	margin-left: 157px;
+	/*margin-left: 157px;*/
+	margin-left: 30px;
+	margin-right: 0px;
 	cursor: pointer;
 }
 
+.Head__menuHead__regionHead__region:hover{
+	opacity: 0.7;
+}
 
 .Head__menuHead__regionHead__line{
 	width: 8px;
@@ -107,33 +122,42 @@ header a{
 }
 
 .Head__listHead{
-	margin-left: 85px;
+	margin-left: -40px;
+	margin-right: 100px;
+	width: 730px;
 }
 
 .Head__listHead__menu{
 	display: flex;
+	flex-wrap: wrap;
 	color: white;
-	margin-top: 27px;
-	margin-left: 0px;
 }
 
 .Head__listHead__menu-items{
 	cursor: pointer;
 	list-style: none;
 	display: flex;
-	font-size:14px;
+	font-size: 14px;
+}
+
+.Head__listHead__menu-items:not(.Head__listHead__menu-items:nth-child(1), .Head__listHead__menu-items:nth-child(2)):hover{
+	opacity: 0.6;
+}
+
+.Head__listHead__menu-items_label:hover{
+	opacity: 0.6;
 }
 
 .Head__listHead__menu-items-catalog{
-	padding: 0 0 0 42px;
+	padding: 10px 0 0 42px;
 }
 
 .Head__listHead__menu-items-info , .Head__listHead__menu-items-calc , .Head__listHead__menu-items-service{
-	padding: 0 0 0 39px;
+	padding: 10px 0 0 39px;
 }
 
 .Head__listHead__menu-items-company , .Head__listHead__menu-items-contacts{
-	padding: 0 0 0 41px;
+	padding: 10px 0 0 41px;
 }
 
 .Head__listHead__menu-items-more_line{
@@ -157,6 +181,11 @@ header a{
 	z-index: 1;
 }
 
+.Head__listHead__menu-items__more-href{
+	text-decoration: none;
+	color: white;
+}
+
 .Head__listHead__menu-items__more-href_name{
 	cursor: pointer;
 	list-style: none;
@@ -175,10 +204,15 @@ header a{
 
 .Head__menuHead__menu_language{
 	display: flex;
-	position: absolute;
+	width: 60px;
 	margin-top: 28px;
-	margin-left: 1046px;
+	margin-left: auto;
+	margin-right: 0px;
 	cursor: pointer;
+}
+
+.Head__menuHead__menu_language:hover{
+	opacity: 0.6;
 }
 
 .Head__menuHead__menu_language-img{
@@ -201,7 +235,8 @@ header a{
 	display: flex;
 	color: white;
 	margin-top: 28px;
-	margin-left: 207px;
+	margin-left: 25px;
+	margin-right: 33px;
 }
 
 .Head__menuHead__menu_phone-img{
@@ -219,13 +254,17 @@ header a{
 .Head__menuHead__menu_user{
 	display: flex;
 	margin-top: 26px;
-	margin-left: 37px;
+	margin-right: 130px;
 }
 
 .Head__menuHead__menu_user-href:not(.Head__menuHead__menu_user-basket){
 	margin-left: 30px
 }
 
+
+.Head__menuHead__menu_user-href:hover{
+	opacity: 0.6;
+}
 
 
 /*slider left number*/
@@ -271,11 +310,13 @@ header a{
 	font-family: "Montserrat";
 	font-size: 18px;
 	margin-top: 223px;
-	margin-left: 83px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .Head__banner_items{
 	display: flex;
+	flex-wrap: wrap;
 	font-size: 14.5px;
 	font-family: "Lato";
 	margin-top: 170px;
@@ -307,36 +348,49 @@ header a{
 	text-align: center;
 }
 
-.Head__banner_head_name p{
+.Head__banner_head_name_text{
+	display: flex;
+	flex-wrap: wrap;
+	width: 430px;
 	font-size: 14.2px;
 	margin-top: -3px;
-	margin-left: 1px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
 /*catalog*/
+
 #catalog{
-	position: absolute;
-	width: 1440px;
+	width: 100%;
+	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -800px;
+	margin-top: 0px;
 }
 
 .popularBlock{
-	width: 1440px;
+	position: absolute;
+	width: 100%;
 	display: none;
-	height: 510px;
+	height: 100%;
 	background: #e4e4e4;
-	padding-top: 200px;
-	padding-bottom: 92px;
+	padding-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.popularBlock__block-catalog{
+	width: 85%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .popularBlock__all-catalog{
 	display: flex;
-	margin-left: 139px;
+	flex-wrap: wrap;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .popularBlock__header{
@@ -355,8 +409,9 @@ header a{
 	line-height: 20px;
 	text-transform: uppercase;
 	color: #C0511F;
-	margin-left: 997px;
 	margin-top: 10px;
+	margin-left: auto;
+	margin-right: 40px;
 	cursor: pointer;
 }
 
@@ -384,7 +439,7 @@ header a{
 .popularBlock__catalog-block{
 	background:#F6F6F6;
 	width: 202px;
-	height:180px;
+	height: 180px;
 }
 
 .popularBlock__catalog-block_img{
@@ -396,7 +451,7 @@ header a{
 	margin-left: 10px;
 	width: 202px;
 	height: 330px;
-	box-shadow: 0px 0px 5px 5px rgb(0,0,0, 0.1)
+	box-shadow: 0px 0px 5px 5px rgb(0,0,0, 0.1);
 }
 
 .popularBlock__catalog_text{
@@ -471,8 +526,9 @@ header a{
 
 .popularBlock__bottom-line{
 	margin-top: 30px;
-	margin-left: 140px; 
-	width: 1290px;
+	margin-left: auto;
+	margin-right: auto; 
+	width: 85%;
 	height: 0px;
 	padding: 0; 
 	border: 2px solid rgb(0, 0, 0, 0.3);
@@ -489,17 +545,18 @@ header a{
 }
 
 #services{
-	position: absolute;
-	width: 1440px;
-	margin-top: -800px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	margin-top: 0px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .services{
-	width: 1440px;
-	padding-top: 100px;
-	height: 700px;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 500px;
 	background: #e4e4e4;
 	display: none;
 	background: linear-gradient(256.7deg, #ECECE9 0%, #F6F6F6 100%);
@@ -516,9 +573,13 @@ header a{
 }
 
 .services__items{
+	width: 85%;
 	display: flex;
-	margin-top: 150px;
-	margin-left: 145px;
+	flex-wrap: wrap;
+	margin-top: 129.5px;
+	/*margin-left: 145px;*/
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .services__items__self{
@@ -530,10 +591,6 @@ header a{
 	background: white;
 	box-shadow: 0px 0px 2px 2px #e4e4e4;
 	transition-duration: 0.3s
-}
-
-.services__items__self-first{
-	margin-left: 0px;
 }
 
 .services__items__self-thrid{
@@ -569,28 +626,32 @@ header a{
 /*STOCKS*/
 
 #stocks{
-	position: absolute;
-	z-index: 1;
-	width: 1440px;
+	width: 100%;
+	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -800px;
+	margin-top: 0px;
+	overflow-y: hidden;
 }
 
 .stocks{
-	width: 1440px;
-	height: 700px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
 	padding-top: 100px;
+	padding-bottom: 300px;
 	display: none;
 	margin-left: auto;
 	margin-right: auto;
 	background: #e4e4e4;
+	overflow-y: hidden;
 }
 
 .stocks__header{
 	display: flex;
 	margin-top: 87px;
 	margin-left: 150px;
+	margin-right: auto
 }
 
 .stocks__header_head-text{
@@ -602,7 +663,9 @@ header a{
 }
 
 .stocks__header_href{
-	margin-top: 27px;
+	padding-top: 27px;
+	margin-left: auto;
+	margin-right: 30px;
 }
 
 .stocks__header_href:hover , .stocks__all-products__item-href:hover{
@@ -617,7 +680,6 @@ header a{
 	line-height: 20px;
 	text-decoration: none;
 	color: #C0511F;
-	margin-left: 1053px;
 }
 
 .stocks__header_href-img{
@@ -625,15 +687,18 @@ header a{
 }
 
 .stocks__all-products{
-	margin-left: 120px;
-	margin-top: 23px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 85%;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .stocks__all-products__item{
 	width:401px;
 	height:400px;
 	background: white;
+	padding-top: 23px;
 	margin-left: 30px;
 }
 
@@ -669,23 +734,25 @@ header a{
 
 
 #news{
-	position: absolute;
-	z-index: 1;
-	width: 1440px;
+	width: 100%;
+	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	background: url("img/news/wapper.png");
-	margin-top: -700px;
+	background: url("img/news/wapper.png") no-repeat;
+	background-size: cover;
+	margin-top: 0px;
 }
 
 .news{
-	width: 1440px;
-	height: 670px;
+	width: 100%;
+	height: 100%;
 	display: none;
-	padding-top: 30px;
+	padding-top: 100px;
+	padding-bottom: 500px;
 	margin-left: auto;
 	margin-right: auto;
 	background: rgb(0,0,0, 0.5);
+	background-size: cover;
 }
 
 .news__header{
@@ -704,7 +771,8 @@ header a{
 }
 
 .news__header-href{
-	margin-left: 1007px;
+	margin-left:auto;
+	margin-right: 30px;
 	margin-top: 25px;
 }
 
@@ -727,8 +795,11 @@ header a{
 }
 
 .news__items{
+	width: 85%;
 	display: flex;
-	margin-left: 150px;
+	flex-wrap: wrap;
+	margin-right: auto;
+	margin-left: auto;
 	margin-top: 50px;
 }
 
@@ -767,7 +838,8 @@ header a{
 }
 
 .news__items__small-news{
-	margin-left: 517px;
+	margin-left: auto;
+	margin-right: 30px;
 	margin-top: 48px;
 }
 
@@ -797,18 +869,19 @@ header a{
 /*USEFUL*/
 
 #useful{
-	width: 1440px;
-	position: absolute;
+	width: 100%;
+	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -700px;
+	margin-top: 0px;
 }
 
 .useful{
-	width: 1440px;
-	height: 650px;
+	width: 100%;
+	height: 100%;
 	display: none;
 	padding-top: 50px;
+	padding-bottom: 400px;
 	margin-left: auto;
 	margin-right: auto;
 	background: #f6f6f6;
@@ -830,7 +903,8 @@ header a{
 
 .useful__header_href{
 	margin-top: 27px;
-	margin-left: 915px;
+	margin-left: auto;
+	margin-right: 30px;
 }
 
 .useful__header_href:hover{
@@ -852,8 +926,11 @@ header a{
 }
 
 .useful__all-products{
+	width: 85%;
 	display: flex;
-	margin-left: 115px;
+	flex-wrap: wrap;
+	margin-right: auto;
+	margin-left: auto;
 	margin-top: 24px;
 }
 
@@ -893,19 +970,19 @@ header a{
 
 /*PARTHERS*/
 #parthers{
-	width: 1440px;
-	position: absolute;
+	width: 100%;
+	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -700px;
+	margin-top: 0px;
 }
 
 .parthers{
-	width: 1440px;
-	height: 550px;
+	width: 100%;
+	height: 100%;
 	display: none;
 	padding-top: 50px;
-	padding-bottom: 100px;
+	padding-bottom: 600px;
 	margin-left: auto;
 	margin-right: auto;
 	background: #f6f6f6;
@@ -924,7 +1001,9 @@ header a{
 }
 
 .parthers__all{
+	width: 85%;
 	display: flex;
+	flex-wrap: wrap;
 	margin-left: 144px;
 	margin-top: 100px;
 }
@@ -946,19 +1025,30 @@ header a{
 	padding-top: 27px;
 }
 
-/*FOOTER*/
+.partherBlock__bottom-line{
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto; 
+	width: 85%;
+	height: 0px;
+	padding: 0; 
+	border: 2px solid rgb(0, 0, 0, 0.3);
+	border-radius: 20px;
+}
 
+
+/*FOOTER*/
 #menu-footer{
-	width: 1440px;
-	position: absolute;
+	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: -701px;
+	margin-top: 100px;
+	z-index: 0;
 }
 
 .menu-footer{
 	width: 1440px;
-	height: 700px;
+	height: 600px;
 	display: none;
 	margin-right: auto;
 	margin-left: auto;
@@ -966,6 +1056,7 @@ header a{
 
 .menu-footer__info{
 	display: flex;
+	flex-wrap: wrap;
 	padding-top: 123px;
 	margin-left: 144px;
 }
@@ -999,6 +1090,10 @@ header a{
 	line-height: 30px;
 	color: white;
 	cursor: pointer;
+}
+
+.menu-footer__info__lists-item:hover , .menu-footer__info__string:hover{
+	opacity: 0.3;
 }
 
 .menu-footer__footer{
@@ -1042,6 +1137,7 @@ header a{
 .Head__active_banner{
 	display: block;
 }
+
 
 @keyframes move_banner_dis{
 	from{
